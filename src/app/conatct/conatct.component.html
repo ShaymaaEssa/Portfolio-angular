@@ -1,0 +1,39 @@
+<section class="py-5">
+    <div class="container">
+        <h1 class="text-uppercase text-center">Contact Section</h1>
+
+        <app-decoration [isWhite]="false"></app-decoration>
+
+        <div class="form mt-5">
+          <form action="" class="w-50 mx-auto">
+
+            <div class=" mb-3 overflow-hidden position-relative">
+              <label for="floatingInput" class="form-label" [class]="{'display-form-label':(userNameValue.length>0)}"  >User Name</label>
+              <input type="text"  class="form-control border-top-0 border-start-0 border-end-0 "   placeholder="User Name" [(ngModel)]="userNameValue" name="userName">
+              </div>
+
+
+              <div class=" mb-3 overflow-hidden position-relative">
+                <label for="floatingInput" class="form-label" [class]="{'display-form-label':(userAgeValue.length>0)}"  >User Age</label>
+                <input type="text"  class="form-control border-top-0 border-start-0 border-end-0 "   placeholder="User Age"  [(ngModel)]="userAgeValue" name="userAge">
+                </div>
+
+                <div class=" mb-3 overflow-hidden position-relative">
+                  <label for="floatingInput" class="form-label" [class]="{'display-form-label':(userEmailValue.length>0)}"  >User Email</label>
+                  <input type="email"  class="form-control border-top-0 border-start-0 border-end-0 "   placeholder="User Email"  [(ngModel)]="userEmailValue" name="userEmail">
+                  </div>
+
+              
+                  <div class=" mb-3 overflow-hidden position-relative">
+                    <label for="floatingInput" class="form-label" [class]="{'display-form-label':(userPasswordValue.length>0)}"  >User Password</label>
+                    <input type="password"  class="form-control border-top-0 border-start-0 border-end-0 "   placeholder="User Password"  [(ngModel)]="userPasswordValue" name="userPassword">
+                    </div>
+
+            <div class="submit-btn ">
+              <button class="btn">Send Message</button>
+            </div>
+
+          </form>  
+        </div>
+    </div>
+</section>

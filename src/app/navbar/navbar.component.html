@@ -1,0 +1,26 @@
+<nav [class]="{'py-2':isScrolled, 'py-4':!isScrolled}" class="navbar navbar-expand-lg  position-fixed top-0 start-0 end-0 z-1"> 
+    <div class="container">
+      <a class="navbar-brand" routerLink="home">Shaymaa Essa</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 column-gap-2">
+          
+          <li class="nav-item">
+            <a class="nav-link text-white text-uppercase" routerLinkActive="bg-active rounded" routerLink="about">about</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-white text-uppercase" routerLinkActive="bg-active rounded" routerLink="portfolio">portfolio</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-white text-uppercase" routerLinkActive="bg-active rounded" routerLink="contact">contact</a>
+          </li>
+
+        </ul>
+        
+      </div>
+    </div>
+  </nav>

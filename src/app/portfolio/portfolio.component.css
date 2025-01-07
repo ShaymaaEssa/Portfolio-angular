@@ -1,0 +1,50 @@
+section{
+    margin-top: 90px;
+  
+}
+
+h1{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 40px;
+    line-height: 48px;
+    color: #2c3e50    ;
+    font-weight: 700;
+}
+
+app-decoration {
+    color: #2c3e50;
+}
+
+.inner{
+    transition: all 0.5s;
+}
+
+.layer{
+    background-color: #1ABC9C;
+    opacity: 0;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    cursor: pointer;
+}
+
+
+i{
+    font-size: 96px;
+    color: white;
+}
+
+.inner:hover .layer{
+    opacity: 0.8;
+
+}
+
+.focus-layer{
+    background-color:  rgba(194, 218, 255, 0.4);
+}
+.image{
+    max-width: 600px;
+    max-height: 60%;
+}
