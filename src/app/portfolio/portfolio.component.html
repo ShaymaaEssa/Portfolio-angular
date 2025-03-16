@@ -5,8 +5,29 @@
     <app-decoration [isWhite]="false"></app-decoration>
 
     <div class="row gy-3 mt-2">
-      <div class="col-md-6 col-lg-4">
-        <div class="inner position-relative" (click)="displayFocusLayer(1)"  >
+      @for (project of projects; track project.id) {
+        <div class="col-md-6 col-lg-4">
+          <div class="inner position-relative" data-bs-toggle="modal" data-bs-target="#projectModal" (click)="setClickedIndex(project.id)"   >
+            <div class="image overflow-hidden"  >
+              <img
+                [src]="project.img"
+                alt="portfolio image"
+                class="w-100 rounded-2"
+                height="200px"
+              />
+            </div>
+            <div
+              class="layer position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center rounded-2"
+            >
+              <div class="icon">
+                <i class="fa-solid fa-plus"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+      <!-- <div class="col-md-6 col-lg-4">
+        <div class="inner position-relative" data-bs-toggle="modal" data-bs-target="#projectModal" (click)="displayFocusLayer(1)"  >
           <div class="image">
             <img
               src="/images/1.png"
@@ -25,7 +46,7 @@
       </div>
 
       <div class="col-md-6 col-lg-4">
-        <div class="inner position-relative" (click)="displayFocusLayer(2)" >
+        <div class="inner position-relative" data-bs-toggle="modal" data-bs-target="#projectModal" (click)="displayFocusLayer(2)" >
           <div class="image">
             <img
               src="/images/2.png"
@@ -44,7 +65,7 @@
       </div>
 
       <div class="col-md-6 col-lg-4">
-        <div class="inner position-relative" (click)="displayFocusLayer(3)" >
+        <div class="inner position-relative" data-bs-toggle="modal" data-bs-target="#projectModal" (click)="displayFocusLayer(3)" >
           <div class="image">
             <img
               src="/images/3.png"
@@ -63,7 +84,7 @@
       </div>
 
       <div class="col-md-6 col-lg-4">
-        <div class="inner position-relative" (click)="displayFocusLayer(1)" >
+        <div class="inner position-relative" data-bs-toggle="modal" data-bs-target="#projectModal" (click)="displayFocusLayer(1)" >
           <div class="image">
             <img
               src="/images/1.png"
@@ -82,7 +103,7 @@
       </div>
 
       <div class="col-md-6 col-lg-4">
-        <div class="inner position-relative" (click)="displayFocusLayer(2)" >
+        <div class="inner position-relative" data-bs-toggle="modal" data-bs-target="#projectModal" (click)="displayFocusLayer(2)" >
           <div class="image">
             <img
               src="/images/2.png"
@@ -101,7 +122,7 @@
       </div>
 
       <div class="col-md-6 col-lg-4">
-        <div class="inner position-relative" (click)="displayFocusLayer(3)" >
+        <div class="inner position-relative"  data-bs-toggle="modal" data-bs-target="#projectModal" >
           <div class="image">
             <img
               src="/images/3.png"
@@ -117,12 +138,12 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>
 
-<div class="focus-layer position-fixed top-0 start-0 bottom-0 end-0 z-2  justify-content-center align-items-center" 
+<!-- <div class="focus-layer position-fixed top-0 start-0 bottom-0 end-0 z-2  justify-content-center align-items-center" 
 [class]="{'d-none':!isFocusLayerDisplayed, 'd-flex':isFocusLayerDisplayed}" (click)="closeFocusLayer()">
     
         <div class="inner d-flex justify-content-center align-items-center">
@@ -131,6 +152,36 @@
             </div>
         </div>
    
+</div> -->
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-3" id="projectModalLabel">{{projects[clickedIndex].projectTitle}}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="img">
+          <img [src]="projects[clickedIndex].img" class="w-100"/>
+        </div>
+        <h5 class="pt-3">About</h5>
+        <p class="pt-2">{{projects[clickedIndex].desc}}</p>
+        <div class="skills d-flex justify-content-center column-gap-2">
+          @for (item of projects[clickedIndex].skills; track $index) {
+            <span class="badge rounded-pill text-bg-info">{{item}}</span>
+          }
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button type="button" class="btn btn-success text-white d-flex justify-content-center align-items-center column-gap-2"><i class="fa-solid fa-laptop-code fs-5"></i> <a class="text-decoration-none text-white" [href]="projects[clickedIndex].liveDemo" target="_blank">Live Demo</a></button>
+        <button type="button" class="btn btn-dark text-white d-flex justify-content-center align-items-center column-gap-2"><i class="fa-brands fa-square-github fs-5"></i><a class="text-decoration-none text-white" [href]="projects[clickedIndex].github" target="_blank">Repo Code</a></button>
+      </div>
+    </div>
+  </div>
 </div>
 
 

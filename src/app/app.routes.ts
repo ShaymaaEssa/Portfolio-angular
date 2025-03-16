@@ -8,9 +8,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
 
 export const routes: Routes = [
     {path:"", redirectTo:"home", pathMatch:"full"},
-    {path:"home", component:HomeComponent, title:"Home"},
-    {path:"about", component:AboutComponent, title:"About"},
-    {path:"portfolio", component:PortfolioComponent, title:"Portfolio"},
-    {path:"contact", component:ConatctComponent, title:"Contact"},
+    {path:"home", component:HomeComponent, title:"Sh-Home"},
+    {path:"about", component:AboutComponent, title:"Sh-About"},
+    {path:"portfolio", component:PortfolioComponent, title:"Sh-Portfolio"},
+    {path:"contact", component:ConatctComponent, title:"Sh-Contact"},
     {path:"**", component:NotFoundComponent, title:"NotFound"}
 ];
